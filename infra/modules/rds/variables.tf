@@ -11,4 +11,7 @@ variable "multi_az" { type = bool }
 variable "db_name" { type = string }
 variable "username" { type = string }
 variable "engine_version" { type = string }
-variable "tags" { type = map(string) default = {} }
+variable "tags" {
+	type    = map(string)
+	default = {}
+}
