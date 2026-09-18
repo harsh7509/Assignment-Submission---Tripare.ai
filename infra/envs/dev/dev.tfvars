@@ -1,0 +1,25 @@
+aws_region                  = "us-east-1"
+name                        = "dev-bookings"
+vpc_cidr                    = "10.10.0.0/16"
+availability_zones          = ["us-east-1a", "us-east-1b"]
+public_subnet_cidrs         = ["10.10.1.0/24", "10.10.2.0/24"]
+private_subnet_cidrs        = ["10.10.11.0/24", "10.10.12.0/24"]
+container_image             = "nginx:1.27-alpine"
+container_port              = 80
+task_cpu                    = 256
+task_memory                 = 512
+desired_count               = 1
+log_retention_days          = 7
+db_instance_class            = "db.t4g.micro"
+db_allocated_storage        = 20
+db_backup_retention_period  = 3
+db_deletion_protection       = true
+db_skip_final_snapshot       = true
+db_multi_az                  = false
+db_name                      = "bookings"
+db_username                  = "bookings_admin"
+db_engine_version            = "16.4"
+tags = {
+  Environment = "dev"
+  Project     = "hotel-bookings"
+}
